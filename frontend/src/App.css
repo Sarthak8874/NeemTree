@@ -1,0 +1,55 @@
+.upload {
+    display: flex;
+    flex-direction: column;
+    width: 80vw;
+    height: 80vh;
+
+    margin: 30px 50px;
+}
+
+.heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgb(215, 186, 113);
+    padding: 5px 10px;
+}
+
+.desc {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    border: 2px solid #888;
+    border-top: none;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+    padding: 50px 100px;
+}
+.file-upload{
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  height: 20vh;
+  margin-top: 50px;
+  padding: 3% 10%;
+  border: 2px solid #888;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+  align-items: center;
+  justify-content: center;
+}
+
+.button {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #03b140;
+    color: #fff; 
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  .Thank-You{
+    font-size: 25px;
+    font-weight: 700;
+    color: #03b140;
+  }
