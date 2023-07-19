@@ -52,9 +52,9 @@ router.post("/upload", upload.single("file"), async (req, res) => {
         }
       }
     });
-    res.status(200).send("File Uploaded Successfully");
+    res.status(200).send("Success");
   } catch (e) {
-    res.status(400).send("File doesn't Uploaded");
+    res.status(400).send("Fail");
   }
 });
 

@@ -71,10 +71,11 @@ function App() {
                 </div>
               </>
             )}
-            {response && (
-              <>
-                <div className="Thank-You">Thank You!</div>
-                <div>
+            {response &&
+              (response === "Success" ? (
+                <>
+                  <div className="Thank-You">Thank You!</div>
+                  <div>
                     {" "}
                     <span>
                       <FaCheck
@@ -87,10 +88,14 @@ function App() {
                       />
                     </span>
                     File Succesfully Uploaded
+                  </div>
+                  <div>Your records will be processed shortly</div>
+                </>
+              ) : (
+                <div className="Thank-You" style={{ color: "Red" }}>
+                  Failure
                 </div>
-                <div>Your records will be processed shortly</div>
-              </>
-            )}
+              ))}
           </div>
         </div>
       </div>
