@@ -32,6 +32,7 @@ router.post("/upload", upload.single("file"), async (req, res) => {
           CurrentEmployer,
           CurrentDesignation,
         ] = row;
+        // Email Validation
         const existingEmail = await User.findOne({ email: email });
         if (!existingEmail) {
           const user = {
