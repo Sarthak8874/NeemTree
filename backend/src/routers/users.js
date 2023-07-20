@@ -32,23 +32,26 @@ router.post("/upload", upload.single("file"), async (req, res) => {
           CurrentEmployer,
           CurrentDesignation,
         ] = row;
-        const user = {
-          name: name,
-          email: email,
-          MobileNo: MobileNo,
-          DateofBirth: DateofBirth,
-          WorkExperience: WorkExperience,
-          ResumeTitle: ResumeTitle,
-          CurrentLocation: CurrentLocation,
-          PostalAddress: PostalAddress,
-          CurrentEmployer: CurrentEmployer,
-          CurrentDesignation: CurrentDesignation,
-        };
-        const newUser = new User(user);
-        try {
-          await newUser.save();
-        } catch (e) {
-          console.log(e);
+        const existingEmail = await User.findOne({ email: email });
+        if (!existingEmail) {
+          const user = {
+            name: name,
+            email: email,
+            MobileNo: MobileNo,
+            DateofBirth: DateofBirth,
+            WorkExperience: WorkExperience,
+            ResumeTitle: ResumeTitle,
+            CurrentLocation: CurrentLocation,
+            PostalAddress: PostalAddress,
+            CurrentEmployer: CurrentEmployer,
+            CurrentDesignation: CurrentDesignation,
+          };
+          const newUser = new User(user);
+          try {
+            await newUser.save();
+          } catch (e) {
+            console.log(e);
+          }
         }
       }
     });
